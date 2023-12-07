@@ -1,0 +1,39 @@
+---
+name: Test
+on: [push]
+
+jobs:
+  build:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - run: npm i
+      - uses: ./
+        with:
+          repository: nmbgeek/github-action-get-latest-commit
+      - uses: ./
+        with:
+          owner: nmbgeek
+          repo: github-action-get-latest-commit
+      - uses: ./
+        with:
+          owner: nmbgeek
+          repo: github-action-get-latest-commit
+          branch: main
+      - uses: ./
+        with:
+          repository: nmbgeek/github-action-get-latest-commit
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: ./
+        with:
+          owner: nmbgeek
+          repo: github-action-get-latest-commit
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: ./
+        with:
+          owner: nmbgeek
+          repo: github-action-get-latest-commit
+          branch: main
+          token: ${{ secrets.GITHUB_TOKEN }}

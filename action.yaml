@@ -1,0 +1,34 @@
+---
+name: 'Get Latest Commit'
+description: >-
+  Get the latest commit hash and description from another repository and output that for use in 
+  other actions
+branding:
+  icon: 'anchor'
+  color: 'orange'
+inputs:
+  owner:
+    description: 'The Github user or organization that owns the repository'
+    required: false
+  repo:
+    description: 'The repository name'
+    required: false
+  repository:
+    description: 'The repository name in full'
+    required: false
+  branch:
+    description: 'Branch to get last commit for (e.g. dev)'
+    required: false
+  token:
+    description: 'The GitHub token or personal access token'
+    required: false
+outputs:
+  shorthash:
+    description: 'Short commit hash'
+  hash:
+    description: 'Full commit hash'
+  description:
+    description: 'Latest commit message'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
