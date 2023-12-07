@@ -49,7 +49,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: lastcommit
-        uses: nmbgeek/github-action-get-latest-release@main
+        uses: nmbgeek/github-action-get-latest-commit@main
         with:
           owner: abtassociates
           repo: eva
