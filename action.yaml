@@ -30,5 +30,5 @@ outputs:
   description:
     description: 'Latest commit message'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
